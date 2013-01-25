@@ -1,7 +1,5 @@
 "use strict";
 
-var log = require("log");
-
 exports.writeJSON = function(res, data) {
     res.writeHead(200, {"Content-Type": "application/json"});
     res.write(JSON.stringify(data));
@@ -25,10 +23,8 @@ exports.getpostJSON = function(options, cb) {
         } catch(e) {
             return cb({ "error": "bad JSON" });
         }
-        options.input = postobj;
-        log({input: options.input});
-
-        cb(options);
+    
+        cb({input: postobj});
     });
 };
 
