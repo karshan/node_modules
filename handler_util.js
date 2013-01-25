@@ -6,7 +6,7 @@ exports.writeJSON = function(res, data) {
     res.writeHead(200, {"Content-Type": "application/json"});
     res.write(JSON.stringify(data));
     res.end();
-}
+};
 
 exports.getpostJSON = function(options, cb) {
     if (options.request.method !== "POST") {
@@ -30,4 +30,15 @@ exports.getpostJSON = function(options, cb) {
 
         cb(options);
     });
-}
+};
+
+exports.mixin = function(a, b) {
+    var out = {};
+    for (var k in a) {
+        out[k] = a[k];
+    }
+    for (var k in b) {
+        out[k] = b[k];
+    }
+    return out;
+} 
