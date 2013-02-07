@@ -64,7 +64,7 @@ exports.create = function(settings) {
                 method: "DELETE",
                 host: settings.host,
                 port: settings.port,
-                path: '/' + options.db + '/'
+                path: '/' + options.db + '/' + options.doc + '?rev=' + options.rev 
             }, function(res) {
                 if (res.error) {
                     cb(res);
