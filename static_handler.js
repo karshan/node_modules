@@ -20,6 +20,7 @@ function getContentType(ext) {
         ".js"   : "text/javascript", // TODO check if this is the correct content type
         ".css"  : "text/css", // TODO check this as well
         ".mp4"  : "audio/mpeg",
+	".png"  : "image/png",
     }
     if (contentTypeMap[ext])
         return contentTypeMap[ext];
